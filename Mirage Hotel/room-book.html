@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="room-book.css">
+  <title>BOOK NOW</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav class="navbar">
+            <a class="logo" href="index.html"style="font-size: 40px;">Mirage</a>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="open"></i>
+                <i class="fas fa-times" id="close"></i>
+            </label>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="rooms.html" class="nav-link">Rooms</a></li>
+                <li class="nav-item"><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="rooms.html" class="nav-link book-btn">Book</a></li>
+            </ul>
+
+
+        </nav>
+    </div>
+  </header>
+
+  <div class="container1">
+    <form action ="http://localhost:3000/booked.php" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text"  name="name" placeholder="Enter Your Name" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email"  name="email" placeholder="abc@email.com" required>
+        </div>
+        <div class="elem-group">
+          <label for="phone">Your Phone</label>
+          <input type="tel"  name="phone" placeholder="+91"  required>
+        </div>
+        <hr>
+        <div class="elem-group inlined">
+          <label for="adult">Adults</label>
+          <input type="number" name="adults" placeholder="2" min="1" >
+        </div>
+        <div class="elem-group inlined">
+          <label for="child">Children</label>
+          <input type="number"  name="children" placeholder="2" min="0" >
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkin-date">Check-in Date</label>
+          <input type="date" name="checkin">
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkout-date">Check-out Date</label>
+          <input type="date"  name="checkout" >
+        </div>
+        <div class="elem-group">
+          <label for="room-selection">Select Room Preference</label>
+          <select id="room-selection" name="preference" required>
+              <option value="">Choose a Room from the List</option>
+              <option value="DELUXE BLACK ROOM">DELUXE BLACK ROOM</option>
+              <option value="STUDIO BROADWAY ROOM">STUDIO BROADWAY ROOM</option>
+              <option value="STANDART ONE PERSON ROOM">STANDART ONE PERSON ROOM</option>
+              <option value="STUDIO SMALL ROOM">STUDIO SMALL ROOM</option>
+              <option value="STUDIO CORPORATE ROOM">STUDIO CORPORATE ROOM</option>
+              <option value="DELUXE TWIN ROOM">DELUXE TWIN ROOM</option>
+          </select>
+        </div>
+        <hr>
+        <div class="elem-group">
+          <label for="message" >Anything Else?</label>
+          <textarea id="message" name="comment" placeholder="Tell us anything else that might be important."></textarea>
+        </div>
+
+        <div class="check-box">
+          <input type ="checkbox" checked>
+          <div class="info-checkbox">
+            Do You What Buffet System?
+          </div>
+
+          <div class="check-box">
+            <input type ="checkbox" checked>
+            <div class="info-checkbox">
+              Accept Terms And Conditions..
+            </div>
+        </div>
+       <button type="submit">Book The Rooms</button>
+      </form>
+    </div>
+      <script src="room-book.js"></script>
+</body>
+</html>
